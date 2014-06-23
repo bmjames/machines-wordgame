@@ -22,7 +22,7 @@ hCharsIn h = construct go where
       Nothing -> stop
 
 hLinesOut :: Handle -> ProcessT IO String ()
-hLinesOut h = repeatedly $ await >>= lift . hPutStrLn h
+hLinesOut = autoM . hPutStrLn
 
 type GameState = [Char]
 
