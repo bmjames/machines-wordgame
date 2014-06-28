@@ -71,7 +71,7 @@ game n word = construct $ do
         go s'
 
     initState = []
-    incorrectGuesses s = length $ filter (not . (`elem` word)) s
+    incorrectGuesses s = length $ filter (`notElem` word) s
 
 main :: IO ()
 main = do
